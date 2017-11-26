@@ -1,0 +1,41 @@
+<div class="container" >
+	<div class="row">
+		<h2 *ngIf="pizza._id == null">Créer une nouvelle pizza</h2>
+		<h2 *ngIf="pizza._id != null">Editer une pizza</h2>
+    <form class="col s12" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row">
+				<div class="input-field col s12">
+					<input disabled type="text" name="_id" formControlName="_id">
+				</div>
+        <div class="input-field col s12">
+          <input placeholder="Nom de la pizza" id="name" type="text" class="validate" formControlName="name">
+        </div>
+				<div class="input-field col s12">
+					<input placeholder="Description de la pizza" id="desc" type="text" class="validate" formControlName="description">
+				</div>
+				<div class="input-field col s6">
+					<input placeholder="Prix de la pizza" id="price" type="number" class="validate" formControlName="price">
+				</div>
+				<div class="file-field input-field col s6">
+					<div class="btn">
+						<span>File</span>
+						<input type="file">
+					</div>
+					<div class="file-path-wrapper">
+        		<input type="file" id="filePicker" (change)="handleFileSelect($event)">
+					</div>
+				</div>
+				<div class="input-field col s12">
+					<span *ngFor="let ingredient of listIngredient">
+						<button type="button" (click)="addIngredient(ingredient._id)" class="btn teal" >{{ingredient.name}}</button>
+					</span>
+				</div>
+				<div class="input-field col s12">
+					<input *ngIf="pizza._id == null" type="submit" value="Ajouter" class="btn waves-effect waves-light">
+					<input *ngIf="pizza._id != null" type="submit" value="Editer" class="btn waves-effect waves-light">
+					<a (click)="delete()" class="waves-effect red waves-light btn">Supprimer</a>
+				</div>
+			</div>
+    </form>
+  </div>
+</div>

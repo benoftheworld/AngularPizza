@@ -1,0 +1,13 @@
+<div class="container">
+  <a routerLink="/ingredient/add" class ="btn waves-effect waves-light"><i class="material-icons">add</i></a>
+  <h4>Liste des ingrédients</h4>
+  <ul class="collection with-header" *ngFor="let ingredient of ingredient">
+    <li class="collection-item">
+      <div>{{ingredient.name}}
+        <a routerLink="/ingredient/update/{{ingredient._id}}" class="waves-effect waves-light secondary-content">
+          <i class="material-icons">edit</i>
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,20 +1,50 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="bg-instantConvivial" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="" class="brand-logo"><img src="" alt="Logo" width="65px"/></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a routerLink="" routerLinkActive="active">Accueil</a></li>
+      <li><a routerLink="/pizza/list/">Pizzas</a></li>
+      <li><a routerLink="/ingredient/list/">Ingrédients</a></li>
+    </ul>
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Pizzas</a></li>
+      <li><a href="#">Ingrédients</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class=" white-text material-icons">menu</i></a>
+  </div>
+</nav>
 
+<div id="index-banner" class="parallax-container">
+  <div materialize="parallax" class="parallax">
+    <img class="main-bg-img" src={{backgroundImage}} />
+    <h1 class="red-text">{{title}}</h1>
+  </div>
+</div><br/>
+
+<router-outlet></router-outlet>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">A propos</h5>
+        <p class="grey-text text-lighten-4">L'instant convivial (anciennement Régal Pizza), une passion et un
+          savoir faire depuis 2004 avec l’acquisition d’un premier camion et depuis avril 2013 un deuxième camion
+          qui renforce notre présence sur notre secteur.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Liens</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2017 Instant convivial
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>

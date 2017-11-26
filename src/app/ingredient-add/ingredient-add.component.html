@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+    <form class="col s12" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row">
+				<div class="input-field col s12">
+					<input disabled type="text" name="_id" formControlName="_id">
+				</div>
+        <div class="input-field col s12">
+          <input placeholder="Nom de l'ingredient'" id="name" type="text" class="validate" formControlName="name">
+        </div>
+				<div class="input-field col s6">
+					<input placeholder="Poids de l'ingredient'" id="weight" type="text" class="validate" formControlName="weight">
+				</div>
+				<div class="input-field col s6">
+					<input placeholder="Prix de l'ingredient'" id="price" type="number" class="validate" formControlName="price">
+				</div>
+				<div class="input-field col s12">
+					<input type="submit" value="Ajouter" class="btn waves-effect waves-light">
+					<a (click)="delete()" class="waves-effect red waves-light btn">Supprimer</a>
+				</div>
+			</div>
+    </form>
+  </div>
+</div>
